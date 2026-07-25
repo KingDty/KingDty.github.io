@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alfred Gwengwe</title>
 <style>
+  html, body {
+    overflow-x: hidden;
+  }
   body {
     margin: 0;
     background: #0d1117;
@@ -14,12 +17,26 @@
     align-items: center;
     min-height: 100vh;
   }
+  .figure {
+    position: relative;
+  }
   .ascii-art {
-    font-size: clamp(5px, 1.1vw, 13px);
+    font-size: clamp(3px, 1.15vw, 13px);
     line-height: 1.05;
     white-space: pre;
     margin: 0;
     padding-left: 1rem;
+  }
+  .hello {
+    position: absolute;
+    top: 6%;
+    left: 100%;
+    margin-left: 0.75rem;
+    font-family: monospace;
+    font-style: italic;
+    font-size: clamp(10px, 1.6vw, 20px);
+    color: #c9d1d9;
+    white-space: nowrap;
   }
   .links {
     flex: 1;
@@ -31,9 +48,34 @@
   .links a {
     color: #58a6ff;
   }
+
+  @media (max-width: 700px) {
+    body {
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 0;
+    }
+    .ascii-art {
+      padding-left: 0;
+    }
+    .links {
+      flex: none;
+      padding-left: 0;
+      padding-top: 2rem;
+      text-align: center;
+    }
+    .hello {
+      left: auto;
+      right: 0.5rem;
+      top: -1.4rem;
+      margin-left: 0;
+    }
+  }
 </style>
 </head>
 <body>
+  <div class="figure">
+  <span class="hello">hello there.</span>
   <pre class="ascii-art">
                                                                  .=####**##%#+-
                                                                =###%%%%%%%%%%%%%#=
@@ -99,12 +141,12 @@
                                     .---+++*#%%%%%@=---=+***#############****######******######%%@@@@%#*#****#*****+-
                                     :---=++**%%%%%@=---++***##############****#####******######%%@@@%%#************+-
                                     :---=****##%%%@=---=+***##############****#####******#####%%@@@@%#***#######***+-</pre>
+  </div>
   <div class="links">
     <h3>Stuff</h3>
     <ul>
       <li><a href="https://docs.google.com/spreadsheets/d/1QIA3IXyLlKq55oKN9MupzLChZQTMvITGTkkcdOJu7qg/edit?usp=sharing">Alfred and Nengi Director Watchlist</a></li>
       <li><a href="https://docs.google.com/spreadsheets/d/1a1Qh_GJNn-qx4eZ3aUUTRd5NEgJ4MnHBIe6M_32zQtI/edit?usp=sharing">Prequels of Dune</a></li>
-      <li><a href=https://youtu.be/NdvqHc56lE0>Dune: Part Three | Official Trailer</a></li>
     </ul>
   </div>
 </body>
