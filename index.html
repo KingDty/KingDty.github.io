@@ -99,6 +99,31 @@
     color: #8b949e;
     font-style: italic;
   }
+  .icon-links {
+    list-style: none;
+    padding-left: 0;
+  }
+  .icon-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.25rem 0;
+    text-decoration: none;
+  }
+  .icon-links span {
+    text-decoration: underline;
+  }
+  .icon-links img {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 7px;
+    transition: transform 0.15s;
+  }
+  .icon-links a:hover img,
+  .icon-links a:focus-visible img {
+    transform: translateY(-2px);
+  }
 
   @media (max-width: 700px) {
     body {
@@ -215,15 +240,15 @@
       </a>
     </div>
     <h3>Accounts</h3>
-    <ul>
-      <li><a href="https://www.twitch.tv/kingdty_">Twitch</a></li>
-      <li><a href="https://retroachievements.org/user/KingDty">RetroAchievements</a></li>
-      <li><a href="https://yourgamerprofile.com/KingDty">All the games I've played (kinda)</a></li>
-      <li><a href="https://instagram.com/deetee.dee">Art account here!</a></li>
+    <ul class="icon-links">
+      <li><a href="https://www.twitch.tv/kingdty_"><img src="assets/twitch.webp" alt=""><span>Twitch</span></a></li>
+      <li><a href="https://retroachievements.org/user/KingDty"><img src="assets/retroachievements.webp" alt=""><span>RetroAchievements</span></a></li>
+      <li><a href="https://yourgamerprofile.com/KingDty"><img src="assets/yourgamerprofile.webp" alt=""><span>All the games I've played (kinda)</span></a></li>
+      <li><a href="https://instagram.com/deetee.dee"><img src="assets/instagram.webp" alt=""><span>Art account here!</span></a></li>
     </ul>
     <h3>Stuff</h3>
-    <ul>
-      <li><a href="https://youtu.be/NdvqHc56lE0">Dune: Part Three | Official Trailer</a></li>
+    <ul class="icon-links">
+      <li><a href="https://youtu.be/NdvqHc56lE0"><img src="assets/youtube.webp" alt=""><span>Dune: Part Three | Official Trailer</span></a></li>
     </ul>
   </div>
 </body>
