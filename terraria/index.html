@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terraria October Fest</title>
+<meta name="description" content="Terraria October Fest begins October 10, 2026.">
+<meta name="theme-color" content="#0d1117">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kingdty.github.io/terraria/">
+<meta property="og:title" content="Terraria October Fest">
+<meta property="og:description" content="Begins October 10, 2026 · vanilla · Master Mode">
+<meta property="og:image" content="https://kingdty.github.io/assets/terraria.png">
+<meta property="og:image:width" content="144">
+<meta property="og:image:height" content="144">
+<style>
+  body {
+    margin: 0;
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: monospace;
+    min-height: 100vh;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 8px;
+    border: 2px solid #c9d1d9;
+    pointer-events: none;
+  }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2.5rem 1.75rem;
+  }
+  a {
+    color: #58a6ff;
+  }
+  .back {
+    font-size: 13px;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0 2.5rem;
+  }
+  header img {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(20px, 4vw, 30px);
+  }
+  .date {
+    margin: 0.35rem 0 0;
+    font-style: italic;
+    color: #8b949e;
+  }
+  h2 {
+    font-size: 18px;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 0.5rem;
+  }
+  #progress {
+    float: right;
+    font-weight: normal;
+    font-size: 14px;
+    color: #8b949e;
+  }
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 2rem;
+  }
+  h3 {
+    font-size: 14px;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .bosses {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .bosses li {
+    padding: 0.3rem 0;
+  }
+  .bosses li::before {
+    content: "[ ]";
+    display: inline-block;
+    margin-right: 0.6rem;
+    color: #8b949e;
+  }
+  .bosses li.done {
+    color: #8b949e;
+    text-decoration: line-through;
+  }
+  .bosses li.done::before {
+    content: "[x]";
+    color: #3fb950;
+  }
+
+  @media (max-width: 560px) {
+    .columns {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="../">&larr; back</a>
+
+  <header>
+    <img src="../assets/terraria.webp" alt="">
+    <div>
+      <h1>Terraria October Fest</h1>
+      <p class="date">begins October 10, 2026 · vanilla · Master Mode</p>
+    </div>
+  </header>
+
+  <h2>Boss checklist <span id="progress"></span></h2>
+
+  <!--
+    BOSS CHECKLIST
+    Beat a boss? Add  class="done"  to its line, like this:
+      <li class="done">King Slime</li>
+    Once the world evil is picked, change "Eater of Worlds / Brain of Cthulhu"
+    to "Eater of Worlds" (Corruption) or "Brain of Cthulhu" (Crimson).
+  -->
+  <div class="columns">
+    <section>
+      <h3>Pre-Hardmode</h3>
+      <ul class="bosses">
+        <li>King Slime</li>
+        <li>Eye of Cthulhu</li>
+        <li>Eater of Worlds / Brain of Cthulhu</li>
+        <li>Queen Bee</li>
+        <li>Skeletron</li>
+        <li>Deerclops</li>
+        <li>Wall of Flesh</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Hardmode</h3>
+      <ul class="bosses">
+        <li>Queen Slime</li>
+        <li>The Twins</li>
+        <li>The Destroyer</li>
+        <li>Skeletron Prime</li>
+        <li>Plantera</li>
+        <li>Golem</li>
+        <li>Duke Fishron</li>
+        <li>Empress of Light</li>
+        <li>Lunatic Cultist</li>
+        <li>Moon Lord</li>
+      </ul>
+    </section>
+  </div>
+</main>
+<script>
+  const total = document.querySelectorAll('.bosses li').length;
+  const done = document.querySelectorAll('.bosses li.done').length;
+  document.getElementById('progress').textContent = done + ' / ' + total + ' defeated';
+</script>
+</body>
+</html>

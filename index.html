@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alfred Gwengwe</title>
+<meta name="description" content="Content for a lifetime lowk">
+<meta name="theme-color" content="#0d1117">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kingdty.github.io/">
+<meta property="og:title" content="Alfred Gwengwe">
+<meta property="og:description" content="Content for a lifetime lowk">
+<meta property="og:image" content="https://kingdty.github.io/assets/preview.png">
+<meta property="og:image:width" content="600">
+<meta property="og:image:height" content="600">
 <style>
   html, body {
     overflow-x: hidden;
@@ -48,12 +57,43 @@
   .links {
     flex: 1;
     padding-left: 3rem;
+    padding-right: 1.5rem;
   }
   .links h3 {
     color: #c9d1d9;
   }
   .links a {
     color: #58a6ff;
+  }
+  .servers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .links a.server {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #c9d1d9;
+    text-decoration: none;
+    font-size: 12px;
+    text-align: center;
+  }
+  .server img {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    transition: transform 0.15s;
+  }
+  .server:hover img,
+  .server:focus-visible img {
+    transform: translateY(-3px);
+  }
+  .server small {
+    color: #8b949e;
+    font-style: italic;
   }
 
   @media (max-width: 700px) {
@@ -68,8 +108,12 @@
     .links {
       flex: none;
       padding-left: 0;
+      padding-right: 0;
       padding-top: 2rem;
       text-align: center;
+    }
+    .servers {
+      justify-content: center;
     }
     .hello {
       left: auto;
@@ -150,11 +194,27 @@
                                     :---=****##%%%@=---=+***##############****#####******#####%%@@@@%#***#######***+-</pre>
   </div>
   <div class="links">
+    <h3>Servers</h3>
+    <div class="servers">
+      <a class="server" href="terraria/">
+        <img src="assets/terraria.webp" alt="">
+        <span>Terraria<br><small>October Fest</small></span>
+      </a>
+      <a class="server" href="minecraft/">
+        <img src="assets/minecraft.webp" alt="">
+        <span>Minecraft<br><small>coming soon</small></span>
+      </a>
+    </div>
+    <h3>Accounts</h3>
+    <ul>
+      <li><a href="https://www.twitch.tv/kingdty_">Twitch</a></li>
+      <li><a href="https://retroachievements.org/user/KingDty">RetroAchievements</a></li>
+      <li><a href="https://yourgamerprofile.com/KingDty">All the games I've played (kinda)</a></li>
+      <li><a href="https://instagram.com/deetee.dee">Art account here!</a></li>
+    </ul>
     <h3>Stuff</h3>
     <ul>
-      <li><a href="https://docs.google.com/spreadsheets/d/1QIA3IXyLlKq55oKN9MupzLChZQTMvITGTkkcdOJu7qg/edit?usp=sharing">Alfred and Nengi Director Watchlist</a></li>
       <li><a href="https://youtu.be/NdvqHc56lE0">Dune: Part Three | Official Trailer</a></li>
-      <li><a href="https://docs.google.com/spreadsheets/d/1a1Qh_GJNn-qx4eZ3aUUTRd5NEgJ4MnHBIe6M_32zQtI/edit?usp=sharing">Prequels of Dune</a></li>
     </ul>
   </div>
 </body>
