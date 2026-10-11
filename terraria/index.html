@@ -13,6 +13,7 @@
 <meta property="og:image" content="https://kingdty.github.io/assets/pumpking.png">
 <meta property="og:image:width" content="300">
 <meta property="og:image:height" content="300">
+
 <style>
   body {
     margin: 0;
@@ -21,6 +22,7 @@
     font-family: monospace;
     min-height: 100vh;
   }
+
   body::before {
     content: "";
     position: fixed;
@@ -28,41 +30,50 @@
     border: 2px solid #c9d1d9;
     pointer-events: none;
   }
+
   main {
     max-width: 760px;
     margin: 0 auto;
     padding: 2.5rem 1.75rem;
   }
+
   a {
     color: #58a6ff;
   }
+
   .back {
     font-size: 13px;
   }
+
   header {
     display: flex;
     align-items: center;
     gap: 1rem;
     margin: 2rem 0 1.5rem;
   }
+
   header img {
     width: 72px;
     height: 72px;
     border-radius: 16px;
   }
+
   h1 {
     margin: 0;
     font-size: clamp(20px, 4vw, 30px);
   }
+
   .date {
     margin: 0.35rem 0 0;
     font-style: italic;
     color: #8b949e;
   }
+
   .blurb {
     line-height: 1.6;
     margin: 0 0 2.5rem;
   }
+
   .pumpking {
     display: block;
     width: 300px;
@@ -70,58 +81,128 @@
     margin: 3rem auto 0;
     image-rendering: pixelated;
   }
+
   h2 {
     font-size: 18px;
     border-bottom: 1px solid #30363d;
     padding-bottom: 0.5rem;
   }
+
   #progress {
     float: right;
     font-weight: normal;
     font-size: 14px;
     color: #8b949e;
   }
+
   .columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0 2rem;
   }
+
   h3 {
     font-size: 14px;
     color: #8b949e;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
+
   .bosses {
     list-style: none;
     padding: 0;
     margin: 0;
   }
+
   .bosses li {
     padding: 0.3rem 0;
   }
+
   .bosses li::before {
     content: "[ ]";
     display: inline-block;
     margin-right: 0.6rem;
     color: #8b949e;
   }
+
   .bosses li.done {
     color: #8b949e;
     text-decoration: line-through;
   }
+
   .bosses li.done::before {
     content: "[x]";
     color: #3fb950;
+  }
+
+  /* Server information */
+  .server-info {
+    border: 1px solid #30363d;
+    padding: 0.75rem 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .server-info p {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #21262d;
+  }
+
+  .server-info p:last-child {
+    border-bottom: none;
+  }
+
+  .server-info p > span:first-child {
+    color: #8b949e;
+  }
+
+  .server-info code {
+    color: #c9d1d9;
+    font-family: monospace;
+    overflow-wrap: anywhere;
+  }
+
+  .online {
+    color: #3fb950;
+  }
+
+  .copy-ip {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #30363d;
+    background: transparent;
+    color: #58a6ff;
+    font-family: monospace;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .copy-ip:hover {
+    background: #161b22;
+  }
+
+  #copy-message {
+    color: #3fb950;
+    font-size: 12px;
+    margin-left: 0.5rem;
   }
 
   @media (max-width: 560px) {
     .columns {
       grid-template-columns: 1fr;
     }
+
+    .server-info {
+      padding: 0.5rem 0.75rem;
+    }
   }
 </style>
 </head>
+
 <body>
 <main>
   <a class="back" href="../">&larr; back</a>
@@ -134,17 +215,48 @@
     </div>
   </header>
 
-  <p class="blurb">this is around the 5th year in a row we will be playing terraria during the halloween event up until the moonlord!</p>
+  <p class="blurb">pumpkin season is here! the server is now up. grab your gear and get ready for another year of terraria.</p>
+
+  <h2>Server Info</h2>
+
+  <div class="server-info">
+    <p>
+      <span>status</span>
+      <span class="online">● online</span>
+    </p>
+    <p>
+      <span>ip</span>
+      <code>138.201.80.226</code>
+    </p>
+    <p>
+      <span>port</span>
+      <code>50018</code>
+    </p>
+    <p>
+      <span>mode</span>
+      <span>Master Mode</span>
+    </p>
+    <p>
+      <span>version</span>
+      <span>Vanilla</span>
+    </p>
+
+    <button class="copy-ip" onclick="copyServerAddress()">
+      copy server address
+    </button>
+    <span id="copy-message" aria-live="polite"></span>
+  </div>
 
   <h2>Boss checklist <span id="progress"></span></h2>
 
   <!--
     BOSS CHECKLIST
-    Beat a boss? Add  class="done"  to its line, like this:
+    Beat a boss? Add class="done" to its line, like this:
       <li class="done">King Slime</li>
     Once the world evil is picked, change "Eater of Worlds / Brain of Cthulhu"
     to "Eater of Worlds" (Corruption) or "Brain of Cthulhu" (Crimson).
   -->
+
   <div class="columns">
     <section>
       <h3>Pre-Hardmode</h3>
@@ -158,6 +270,7 @@
         <li>Wall of Flesh</li>
       </ul>
     </section>
+
     <section>
       <h3>Hardmode</h3>
       <ul class="bosses">
@@ -177,10 +290,46 @@
 
   <img class="pumpking" src="../assets/pumpking.png" alt="Pumpking">
 </main>
+
 <script>
-  const total = document.querySelectorAll('.bosses li').length;
-  const done = document.querySelectorAll('.bosses li.done').length;
-  document.getElementById('progress').textContent = done + ' / ' + total + ' defeated';
+  function updateProgress() {
+    const total = document.querySelectorAll('.bosses li').length;
+    const done = document.querySelectorAll('.bosses li.done').length;
+
+    document.getElementById('progress').textContent =
+      done + ' / ' + total + ' defeated';
+  }
+
+  function copyServerAddress() {
+    const address = '138.201.80.226:50018';
+    const message = document.getElementById('copy-message');
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(address).then(() => {
+        message.textContent = 'copied!';
+      }).catch(() => {
+        message.textContent = 'copy failed';
+      });
+    } else {
+      const input = document.createElement('textarea');
+      input.value = address;
+      input.style.position = 'fixed';
+      input.style.opacity = '0';
+      document.body.appendChild(input);
+      input.select();
+
+      try {
+        document.execCommand('copy');
+        message.textContent = 'copied!';
+      } catch (error) {
+        message.textContent = 'copy failed';
+      }
+
+      input.remove();
+    }
+  }
+
+  updateProgress();
 </script>
 </body>
 </html>
